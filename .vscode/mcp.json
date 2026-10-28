@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "products-token",
+      "description": "Access token for products-api",
+      "password": true
+    }
+  ],
+  "servers": {
+    "products-api": {
+      "type": "http",
+      "url": "http://localhost:5080/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:products-token}"
+      }
+    }
+  }
+}
